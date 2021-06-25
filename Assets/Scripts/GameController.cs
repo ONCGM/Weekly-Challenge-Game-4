@@ -1,9 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
@@ -14,6 +16,8 @@ public class GameController : MonoBehaviour {
     [SerializeField, Range(0.01f, 1f)] private float spawnDelay = 0.15f;
     [SerializeField, Range(0.1f, 2f)] private float maxHoldTime = 1f;
     [SerializeField, Range(1f, 125f)] private float maxBallImpulse = 25f;
+    [SerializeField, Range(5, 60)] private int bonusTimeOnJackpot = 20;
+    [SerializeField, Range(2, 12)] private int bonusTimeCooldown = 5;
 
     [Header("Scoring")]
     [SerializeField, Range(1, 15)] private int scorePerBall = 5;
@@ -30,15 +34,25 @@ public class GameController : MonoBehaviour {
     [Header("Components")] 
     [SerializeField] private TMP_Text scoreText;
 
+    [Header("Scene Settings")]
+    [SerializeField, Range(0, 2)] private int mainMenuSceneIndex = 0;
+
     private readonly List<Ball> spawnedBalls = new List<Ball>();
     private readonly List<Ball> inGameBalls = new List<Ball>();
     private WaitForSecondsRealtime waitSpawnDelay;
 
     private float keyDownTime;
+    private float bonusTime;
+    private float nextBonusTime;
+    private bool bonusTimeActive;
+    private readonly List<JackpotPin> jackpotPins = new List<JackpotPin>();
 
     // Setup.
     private void Awake() {
         waitSpawnDelay = new WaitForSecondsRealtime(spawnDelay);
+
+        foreach(var pin in FindObjectsOfType<JackpotPin>())
+            jackpotPins.Add(pin);
     }
 
     // Starting balls.
@@ -46,10 +60,39 @@ public class GameController : MonoBehaviour {
         StartCoroutine(SpawnBalls(startBallAmount, holderSpawnPoint.position));
     }
     
+    #region Jackpot
+
+    /// <summary>
+    /// Opens up the bonus jackpot pins.
+    /// </summary>
+    public void JackpotBonusTime() {
+        if(Time.time < nextBonusTime) return;
+        if(bonusTimeActive) return;
+        
+        bonusTimeActive = true;
+        bonusTime = bonusTimeOnJackpot;
+        foreach(var jackpotPin in jackpotPins) {
+            jackpotPin.BonusTime();
+        }
+    }
+    
+    #endregion
+    
     #region Input
 
     // Input detection.
     private void Update() {
+        if(bonusTimeActive) {
+            if(bonusTime > 0) bonusTime -= Time.deltaTime;
+            else {
+                bonusTimeActive = false;
+                nextBonusTime = Time.time + bonusTimeCooldown;
+                foreach(var jackpotPin in jackpotPins) {
+                    jackpotPin.EndBonus();
+                }
+            }
+        }
+
         if(Input.GetKeyDown(KeyCode.Space)) keyDownTime = Time.time;
         
         if(!Input.GetKeyUp(KeyCode.Space)) return;
@@ -128,7 +171,16 @@ public class GameController : MonoBehaviour {
     /// <summary>
     /// Updates the score text.
     /// </summary>
-    private void UpdateScore() => scoreText.text = $"Score: {playerScore} \n Balls: {spawnedBalls.Count + inGameBalls.Count} / {ballLimit}";
-    
+    private void UpdateScore() {
+        scoreText.text = $"High Score: {PlayerPrefs.GetInt("HighScore")}\nScore: {playerScore}\nBalls: {spawnedBalls.Count + inGameBalls.Count} / {ballLimit}";
+
+        if(playerScore > PlayerPrefs.GetInt("HighScore")) {
+            PlayerPrefs.SetInt("HighScore", playerScore);
+            PlayerPrefs.Save();
+        }
+
+        if(spawnedBalls.Count + inGameBalls.Count < 1) SceneManager.LoadSceneAsync(mainMenuSceneIndex);
+    }
+
     #endregion
 }
