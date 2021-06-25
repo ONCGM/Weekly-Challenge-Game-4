@@ -2090,3 +2090,90 @@ System memory in use after: 106.7 MB.
 Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 6544.
 Total: 4.978300 ms (FindLiveObjects: 0.864800 ms CreateObjectMapping: 0.357900 ms MarkObjects: 3.726600 ms  DeleteObjects: 0.027800 ms)
 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005993 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Pereira\Documents\Unity Projects\4° Game - 10 Week Challenge\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Pereira\Documents\Unity Projects\4° Game - 10 Week Challenge\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.88 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.208 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.73 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4861 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 202.0 MB.
+System memory in use after: 202.4 MB.
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 6520.
+Total: 4.361500 ms (FindLiveObjects: 0.486000 ms CreateObjectMapping: 0.316500 ms MarkObjects: 3.526000 ms  DeleteObjects: 0.032000 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006256 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Pereira\Documents\Unity Projects\4° Game - 10 Week Challenge\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Pereira\Documents\Unity Projects\4° Game - 10 Week Challenge\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.79 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.127 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.26 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4861 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 202.2 MB.
+System memory in use after: 202.7 MB.
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 6522.
+Total: 4.254500 ms (FindLiveObjects: 0.643000 ms CreateObjectMapping: 0.386500 ms MarkObjects: 3.196700 ms  DeleteObjects: 0.026900 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1227.922094 seconds.
+  path: Assets/Scenes/GameScene.unity
+  artifactKey: Guid(15282266a0597cb4395cc92704280600) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/GameScene.unity using Guid(15282266a0597cb4395cc92704280600) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3319da69a68166fdd37a20e3b0db2894') in 0.019678 seconds 
+========================================================================
+Received Prepare
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 2.98 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 8 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 106.0 MB.
+System memory in use after: 106.5 MB.
+
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 6522.
+Total: 6.987800 ms (FindLiveObjects: 0.745900 ms CreateObjectMapping: 0.362700 ms MarkObjects: 5.823700 ms  DeleteObjects: 0.054300 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 82.292635 seconds.
+  path: Assets/Scenes/GameScene.unity
+  artifactKey: Guid(15282266a0597cb4395cc92704280600) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/GameScene.unity using Guid(15282266a0597cb4395cc92704280600) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c102e34069d38a385ad0d5e7ea4df21') in 0.007137 seconds 
+========================================================================
+Received Prepare
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 3.11 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 8 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 106.0 MB.
+System memory in use after: 106.5 MB.
+
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 6522.
+Total: 4.287500 ms (FindLiveObjects: 0.467800 ms CreateObjectMapping: 0.234200 ms MarkObjects: 3.557100 ms  DeleteObjects: 0.015300 ms)
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
